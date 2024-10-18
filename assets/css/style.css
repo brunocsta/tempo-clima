@@ -76,6 +76,17 @@ body{
   cursor: pointer;
 }
 
+.caixa-tempo,
+.tempo-detalhes,
+.not-found {
+  visibility: hidden;
+}
+
+.caixa-tempo.active,
+.tempo-detalhes.active,
+.not-found.active {
+  visibility: visible;
+}
 .caixa-tempo {
   text-align: center;
   margin: 40px 0;
@@ -144,4 +155,23 @@ body{
 .tempo-detalhes p {
   font-size: 14px;
   font-weight: 500;
+}
+.not-found {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  margin-top: 250px;
+}
+
+.not-found img {
+  width: 20%;
+}
+
+.not-found p {
+  font-size: 22px;
+  font-weight: 500;
+  margin-top: 12px;
+  color: #fff;
 }

@@ -2,6 +2,7 @@ const container = document.querySelector(".container");
 const caixaBusca = document.querySelector(".caixa-busca");
 const caixaTempo = document.querySelector(".caixa-tempo");
 const tempoDetalhes = document.querySelector(".tempo-detalhes");
+const error404 = document.querySelector(".not-found");
 
 caixaBusca.addEventListener("click", () => {
   const APIKey = "e4835580c71ec326782a0114bdffc2ef";
@@ -13,6 +14,19 @@ caixaBusca.addEventListener("click", () => {
   )
     .then((response) => response.json())
     .then((json) => {
+      if (json.cod == "404") {
+        container.style.height = "400px";
+        caixaTempo.classList.remove("active");
+        tempoDetalhes.classList.remove("active");
+        error404.classList.add("active");
+        return;
+      }
+
+      container.style.height = "555px";
+      caixaTempo.classList.add("active");
+      tempoDetalhes.classList.add("active");
+      error404.classList.remove("active");
+
       const img = document.querySelector(".caixa-tempo img");
       const temperatura = document.querySelector(".caixa-tempo .temperatura");
       const descricao = document.querySelector(".caixa-tempo .descricao");
