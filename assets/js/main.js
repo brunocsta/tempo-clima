@@ -9,9 +9,9 @@ caixaBusca.addEventListener("click", () => {
 
   if (cidade == "") return;
   fetch(
-    `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${APIKey}`
+    `https://api.openweathermap.org/data/2.5/weather?q=${cidade}&units=metric&appid=${APIKey}&lang=pt_br`
   )
-    .then((response) => response.jason())
+    .then((response) => response.json())
     .then((json) => {
       const img = document.querySelector(".caixa-tempo img");
       const temperatura = document.querySelector(".caixa-tempo .temperatura");
@@ -21,27 +21,29 @@ caixaBusca.addEventListener("click", () => {
 
       switch (json.weather[0].main) {
         case "Clear":
-          img.src = "../images/clear.png";
+          img.src = "assets/images/clear.png";
           break;
 
         case "Rain":
-          img.src = "../images/rain.png";
+          img.src = "assets/images/rain.png";
           break;
 
         case "Snow":
-          img.src = "../images/snow.png";
+          img.src = "assets/images/snow.png";
           break;
 
         case "Clouds":
-          img.src = "../images/cloud.png";
+          img.src = "assets/images/cloud.png";
+          console.log(json.weather[0].main);
           break;
 
         case "Mist":
-          img.src = "../images/mist.png";
+          img.src = "assets/images/mist.png";
+          console.log(json.weather[0].main);
           break;
 
         case "Haze":
-          img.src = "../images/mist.png";
+          img.src = "assets/images/mist.png";
           break;
 
         default:
