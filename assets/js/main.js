@@ -34,12 +34,12 @@ caixaBusca.addEventListener("click", () => {
 
         case "Clouds":
           img.src = "assets/images/cloud.png";
-          console.log(json.weather[0].main);
+          //console.log('passou');
           break;
 
         case "Mist":
           img.src = "assets/images/mist.png";
-          console.log(json.weather[0].main);
+
           break;
 
         case "Haze":
@@ -49,5 +49,10 @@ caixaBusca.addEventListener("click", () => {
         default:
           break;
       }
+
+      temperatura.innerHTML = `${parseInt(json.main.temp)}<span>°C</span>`;
+      descricao.innerHTML = `${json.weather[0].description}`;
+      umidade.innerHTML = `${json.main.humidity}%`;
+      vento.innerHTML = `${parseInt(json.wind.speed)}Km/h`;
     });
 });
