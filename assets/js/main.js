@@ -1,9 +1,11 @@
 const container = document.querySelector(".container");
-const caixaBusca = document.querySelector(".caixa-busca");
+const caixaBusca = document.querySelector(".caixa-busca button");
 const caixaTempo = document.querySelector(".caixa-tempo");
 const tempoDetalhes = document.querySelector(".tempo-detalhes");
 const error404 = document.querySelector(".not-found");
 
+window.onload = () =>
+  (document.querySelector(".caixa-busca input").value = " ");
 caixaBusca.addEventListener("click", () => {
   const APIKey = "e4835580c71ec326782a0114bdffc2ef";
   const cidade = document.querySelector(".caixa-busca input").value;
