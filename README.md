@@ -12,7 +12,7 @@ O projeto foi desenvolvido utilizando:
 + HTML5
 + CSS3
 + Javascript
-+ Lib Boxicon
++ Lib Boxicon via webcomponent
 
 ## APIs Utilizadas
  + **OpenWeatherMap API:** Esta API é responsável por fornecer informações climáticas em tempo real, incluindo temperatura, vento, umidade e condições climáticas. Isso permite que você obtenha dados precisos sobre a cidade pesquisada.
