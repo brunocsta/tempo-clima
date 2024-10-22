@@ -13,7 +13,8 @@ body{
   min-height: 100vh;
   background: url("../images/background.jpg");
   background-size: cover;
-    background-position: center;
+  background-position: center;
+  overflow: hidden;
 }
 
 .container{
@@ -77,22 +78,48 @@ body{
   cursor: pointer;
 }
 
-.caixa-tempo,
-.tempo-detalhes,
-.not-found {
-  visibility: hidden;
+.caixa-tempo {
+  text-align: center;
+  margin: 40px 0;
 }
+
 
 .caixa-tempo.active,
 .tempo-detalhes.active,
 .not-found.active {
   visibility: visible;
 }
+.caixa-tempo .caixa,
+.not-found .caixa {
+  transform: translateY(-100%);
+}
+.caixa-tempo.active .caixa,
+.not-found.active .caixa {
+  transform: translateY(0%);
+  transition: transform 1s ease;
+  transition-delay: .6s;
+}
+.caixa-tempo,
+.tempo-detalhes,
+.not-found {
+  overflow: hidden;
+  visibility: hidden;
+}
 .caixa-tempo {
   text-align: center;
   margin: 40px 0;
 }
 
+.caixa-tempo .caixa .info-tempo {
+  transform: translateY(-120%);
+}
+
+.container.active .caixa-tempo .caixa .info-tempo,
+.container.active .tempo-detalhes .umidade .info-umidade,
+.container.active .tempo-detalhes .vento .info-vento {
+  transform: translateY(0%);
+  transition: transform 1s ease;
+}
 .caixa-tempo img {
   width: 60%;
 }
@@ -130,8 +157,20 @@ body{
   display: flex;
   align-items: center;
   width: 50%;
+  transform: translateY(-100%);
 }
-
+  
+.tempo-detalhes.active .umidade,
+.tempo-detalhes.active .vento {
+  transform: translateY(0%);
+  transition: transform 1s ease;
+  transition-delay: 1.2s;
+}
+.tempo-detalhes .umidade .info-umidade,
+.tempo-detalhes .vento .info-vento {
+  transform: translateY(-100%);
+  overflow: hidden;
+}
 .tempo-detalhes .umidade {
   padding-left: 20px;
   justify-content: flex-start;
@@ -175,4 +214,39 @@ body{
   font-weight: 500;
   margin-top: 12px;
   color: #fff;
+}
+.cidade-oculta {
+  display: none;
+}
+#clone-info-tempo,
+#clone-info-vento,
+#clone-info-umidade {
+  position: absolute;
+  transform: translateY(-100%);
+}
+
+#clone-info-tempo .tempo {
+  transform: translateY(120%);
+  transition: transform 1s ease, opacity 0s;
+  transition-delay: 0s, 2s;
+}
+
+.caixa-tempo:not(.active) #clone-info-tempo .tempo {
+  opacity: 0;
+  transition-delay: 0s;
+}
+
+.active-clone#clone-info-tempo .tempo {
+  transform: translateY(0%);
+}
+
+#clone-info-umidade span,
+#clone-info-vento span {
+  transform: translateY(100%);
+  transition: transform 1s ease;
+}
+
+.active-clone#clone-info-umidade span,
+.active-clone#clone-info-vento span {
+  transform: translateY(0%);
 }
