@@ -28,7 +28,9 @@ O Clima Tempo oferece as seguintes funcionalidades:
 
 ## Preview do Projeto
 
-(TO DO)
+![Página inicial](https://github.com/brunocsta/tempo-clima/blob/main/assets/images/img-projeto1.png?raw=true)
+![Exemplo 1](https://github.com/brunocsta/tempo-clima/blob/main/assets/images/img-projeto3.png?raw=true)
+![Exemplo 2](https://github.com/brunocsta/tempo-clima/blob/main/assets/images/Screenshot%202024-10-22%20at%2007-42-26%20Tempo%20Hoje.png?raw=true)
 
 ## Contribuições
 
