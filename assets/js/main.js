@@ -5,9 +5,6 @@ const tempoDetalhes = document.querySelector(".tempo-detalhes");
 const error404 = document.querySelector(".not-found");
 const cidadeOculta = document.querySelector(".cidade-oculta");
 
-window.onload = () =>
-  (document.querySelector(".caixa-busca input").value = " ");
-
 caixaBusca.addEventListener("click", () => {
   //
   const APIKey = "e4835580c71ec326782a0114bdffc2ef";
